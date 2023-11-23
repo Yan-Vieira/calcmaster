@@ -1,0 +1,15 @@
+.appTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: clamp(0px, 100%, 210px);
+    height: clamp(0px, 100%, 39px);
+}
+
+@media screen and (max-width: 1000px) {
+    .appTitle {
+        width: clamp(0px, 100%, 55px);
+        height: clamp(0px, 100%, 65px);
+    }
+}

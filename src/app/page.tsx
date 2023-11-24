@@ -12,18 +12,10 @@ export default function Home() {
           marginTop: '20px'
         }}
       >
-        <h1
-          style={{
-            color: 'var(--col_4)'
-          }}
-        >
+        <h1>
           Qual será seu próximo <span style={{color: 'var(--col_5)'}}>cálc</span>ulo?
         </h1>
-        <h4
-          style={{
-            color: 'var(--col_4)', textTransform: 'uppercase', marginTop: '10px'
-          }}
-        >
+        <h4>
             Todas as ferramentas matemáticas que você precisa, em um só lugar!
         </h4>
       </Page.Row>
@@ -31,7 +23,7 @@ export default function Home() {
       <Page.Row
         customStyle={{
           justifyContent: 'space-evenly',
-          paddingTop: '60px'
+          paddingTop: '130px'
         }}
       >
         <Page.PLink href='/calculator'>

@@ -11,7 +11,7 @@ export default function IconCalculator () {
         <g transform="translate(-63.505 -136.165)">
           <path
             fill="none"
-            stroke="#000"
+            stroke="#696969"
             strokeDasharray="none"
             strokeLinecap="round"
             strokeLinejoin="round"

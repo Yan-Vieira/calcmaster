@@ -1,5 +1,6 @@
 .button {
     display: flex;
+    flex-wrap: wrap;
     place-content: center;
 
     width: 100%;
@@ -7,8 +8,24 @@
 
     padding: 10px;
     border-radius: 10px;
+
+    background-color: var(--col_2);
+}
+.button:hover {
+    cursor: pointer;
+}
+.button:active {
+    background-color: var(--col_4);
+}
+
+.button.operator {
+    background-color: var(--col_3);
+}
+
+.button.equals {
+    background-color: var(--col_5);
 }
 
 .button.function {
-    background-color: var(--col_4);
+    background-color: var(--col_3);
 }

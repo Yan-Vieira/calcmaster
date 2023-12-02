@@ -1,8 +1,8 @@
 import {
-    Wrapper,
-    Screen,
-    Keyboard,
-    KeyGroup
+    Wrapper as Wr,
+    Screen as Scr,
+    Keyboard as KyB,
+    KeyGroup as KyG
 } from './styledComponents'
 
 import Key from './key'
@@ -14,19 +14,19 @@ export default {
     /**
      * O corpo principal da calculadora.
     */
-    Wrapper,
+    Wr,
     /**
      * A tela da calculadora.
     */
-    Screen,
+    Scr,
     /**
      * O teclado da calculadora.
     */
-    Keyboard,
+    KyB,
     /**
      * Um agrupamento de teclas no teclado da calculadora.
     */
-    KeyGroup,
+    KyG,
     /**
      * Define uma tecla.
     */

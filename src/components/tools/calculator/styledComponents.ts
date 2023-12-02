@@ -17,7 +17,7 @@ export const Wrapper = styled.div`
     justify-content: center;
 
     width: clamp(0px, 100%, 350px);
-    height: clamp(100px, 100%, 400px);
+    height: clamp(100px, 100vh, 400px);
 
     padding: 20px;
     border: 1px solid var(--col_4);
@@ -33,7 +33,7 @@ export const Screen = styled.div`
     align-items: center;
 
     width: 100%;
-    height: 30%;
+    height: 25%;
 
     padding: 5px 20px;
     border: 1px solid var(--col_4);
@@ -44,9 +44,12 @@ export const Keyboard = styled.div<KeyboardProps>`
     display: grid;
     grid-template-columns: ${(props) => props.templateColumns};
     grid-template-rows: ${(props) => props.templateRows};
+    gap: 5px;
 
     width: 100%;
-    height: 70%;
+    height: 75%;
+
+    padding-top: 10px;
 `
 
 export const KeyGroup = styled.div<keyGroupProps>`
@@ -55,5 +58,6 @@ export const KeyGroup = styled.div<keyGroupProps>`
     grid-template-rows: ${(props) => props.templateRows};
     gap: 5px;
 
-    padding: 20px 0px;
+    width: 100%;
+    height: 100%;
 `

@@ -1,6 +1,6 @@
 import Page from '@components/page'
 
-import IconCalculator from '@/assets/IconCalculator'
+import SimpleRuleOfThreeIcon from '@/assets/SimpleRuleOfThreeIcon'
 
 export default function Home() {
   return (
@@ -26,9 +26,9 @@ export default function Home() {
           paddingTop: '130px'
         }}
       >
-        <Page.PLink href='/calculator'>
+        <Page.PLink href='/simple-rule-of-three'>
           <Page.Row>
-            <IconCalculator />
+            <SimpleRuleOfThreeIcon />
           </Page.Row>
 
           <Page.Row
@@ -36,7 +36,7 @@ export default function Home() {
               marginTop: '10px'
             }}
           >
-            <p>Calculadora</p>
+            <p>Regra de três simples</p>
           </Page.Row>
         </Page.PLink>
       </Page.Row>

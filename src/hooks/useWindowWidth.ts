@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react'
 /**
  * Retorna a largura atual da janela do navegador.
 */
-export function useWindowWidth () {
+export default function useWindowWidth () {
     const [width, setWidth] = useState(window.innerWidth)
 
     useEffect(() => {

@@ -22,23 +22,18 @@ export default function Home() {
 
       <Page.Row
         customStyle={{
+          flexWrap: 'wrap',
           justifyContent: 'space-evenly',
-          paddingTop: '130px'
+          paddingTop: '18vh'
         }}
       >
-        <Page.PLink href='/simple-rule-of-three'>
-          <Page.Row>
-            <SimpleRuleOfThreeIcon />
-          </Page.Row>
+        <Page.TLink
+          href='/simple-rule-of-three'
+          image={<SimpleRuleOfThreeIcon />}
+          text='Regra de três simples'
+        />
 
-          <Page.Row
-            customStyle={{
-              marginTop: '10px'
-            }}
-          >
-            <p>Regra de três simples</p>
-          </Page.Row>
-        </Page.PLink>
+
       </Page.Row>
     </Page.Wrapper>
   )

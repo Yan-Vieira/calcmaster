@@ -1,4 +1,4 @@
-.plink {
+.tlink {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -11,14 +11,15 @@
     border-radius: 10px;
 
     font-size: 1em;
+    text-align: center;
     text-decoration: none;
 
     color: var(--col_4);
 }
-.plink:hover {
+.tlink:hover {
     border-color: var(--col_4);
 }
-.plink:active {
+.tlink:active {
 
     background-color: hsla(0, 0%, 0%, 0.1);
 }

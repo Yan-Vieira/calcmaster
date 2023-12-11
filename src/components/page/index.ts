@@ -15,7 +15,7 @@ export default {
     */
     Row,
     /**
-     * A \<Link\/> component dedicated to targeting the application tools from the homepage.
+     * A \<Link\/> component dedicated to targeting a tool, from the homepage.
     */
     TLink
 }

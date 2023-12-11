@@ -1,0 +1,12 @@
+.nav {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    
+    width: 190px;
+    height: 100%;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}

@@ -3,6 +3,23 @@ declare interface SvgProps {
     maxHeight?: string
 }
 
+declare namespace Page {
+    interface WrapperProps {
+        children: React.ReactNode
+    }
+
+    interface RowProps {
+        children: React.ReactNode
+        customStyle?: React.CSSProperties
+    }
+
+    interface TLinkProps {
+        href: string
+        image: React.ReactNode
+        text: string
+    }
+}
+
 declare namespace SROT {
     type values = {
         valueA: string,

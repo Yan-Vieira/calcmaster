@@ -1,10 +1,8 @@
 import styles from './Wrapper.module.css'
 
-interface PageWrapperProps {
-    children: React.ReactNode
-}
 
-export default function Wrapper ({ children }:PageWrapperProps) {
+
+export default function Wrapper ({ children }:Page.WrapperProps) {
     return (
         <section className={styles.page}>
             {children}

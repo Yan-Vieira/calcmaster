@@ -1,6 +1,7 @@
 import Page from '@components/page'
 
-import SimpleRuleOfThreeIcon from '@/assets/SimpleRuleOfThreeIcon'
+import SimpleRuleOfThreeIcon from '@assets/SimpleRuleOfThreeIcon'
+import TimeDifferenceIcon from '@assets/TimeDifferenceIcon'
 
 export default function Home() {
   return (
@@ -33,7 +34,11 @@ export default function Home() {
           text='Regra de três simples'
         />
 
-
+        <Page.TLink
+          href='/time-difference'
+          image={<TimeDifferenceIcon />}
+          text='Diferença de tempo'
+        />
       </Page.Row>
     </Page.Wrapper>
   )

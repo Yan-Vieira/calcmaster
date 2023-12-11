@@ -47,3 +47,25 @@ declare namespace SROT {
         setState: React.Dispatch<React.SetStateAction<SROT.proportionality>>
     }
 }
+
+
+declare namespace TimeDifference {
+    
+    type Values = {
+        startTime: string,
+        endTime: string,
+        startDate: string,
+        endDate: string
+    }
+
+    type ValueNames = 'startTime' | 'endTime' | 'startDate' | 'endDate'
+
+    type InputType = 'time' | 'date'
+
+    interface InputProps {
+        type: TimeDifference.InputType
+        name: TimeDifference.ValueNames
+        state: string
+        setState: React.Dispatch<React.SetStateAction<TimeDifference.Values>>
+    }
+}

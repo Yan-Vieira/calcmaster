@@ -1,6 +1,6 @@
 import Wrapper from './wrapper'
 import Row from './row/index'
-import PLink from './plink'
+import TLink from './t-link'
 
 /**
  * Objeto que reúne os elementos necessários para criar uma página.
@@ -15,7 +15,7 @@ export default {
     */
     Row,
     /**
-     * Um componente \<Link\/> já estilizado. Poupa a necessidade de estilizar os links diretamente na página.
+     * A \<Link\/> component dedicated to targeting the application tools from the homepage.
     */
-    PLink
+    TLink
 }

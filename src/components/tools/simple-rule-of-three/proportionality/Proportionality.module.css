@@ -1,0 +1,11 @@
+.button {
+    font-size: 0.9em;
+
+    color: var(--col_4);
+    background-color: transparent;
+    
+    cursor: pointer;
+}
+.button:hover {
+    text-decoration: underline;
+}

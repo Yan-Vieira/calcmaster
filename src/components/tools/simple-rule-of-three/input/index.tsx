@@ -1,18 +1,6 @@
-import { SetStateAction } from "react"
-
 import styles from "./Input.module.css"
 
 import useWindowWidth from "@hooks/useWindowWidth"
-
-interface SROTInputProps {
-    name: 'valueA' | 'valueB' | 'valueC' | 'valueD',
-    state: string,
-    setState: React.Dispatch<SetStateAction<SROT.values>>,
-    valueX: string,
-    valueXOwner: SROT.valueXOwner
-    setValueXOwner: React.Dispatch<SetStateAction<SROT.valueXOwner>>,
-    direction?: 'normal' | 'reverse'
-}
 
 const respectivePlaceholders = {
     'valueA': 'A',
@@ -21,7 +9,7 @@ const respectivePlaceholders = {
     'valueD': 'D'
 } as {[key: string]: string}
 
-export default function Input ({ name, state, setState, valueX, valueXOwner, setValueXOwner, direction = 'normal' }:SROTInputProps) {
+export default function Input ({ name, state, setState, valueX, valueXOwner, setValueXOwner, direction = 'normal' }:SROT.InputProps) {
 
     const currentWindowWidth = useWindowWidth()
 

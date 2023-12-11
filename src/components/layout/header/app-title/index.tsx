@@ -6,7 +6,7 @@ import useWindowWidth from '@/hooks/useWindowWidth'
 
 import Link from 'next/link'
 import Logo from '@assets/Logo'
-import Title from "@assets/Title"
+import Title from '@assets/Title'
 
 export default function AppTitle () {
     const currentWindowWidth = useWindowWidth()

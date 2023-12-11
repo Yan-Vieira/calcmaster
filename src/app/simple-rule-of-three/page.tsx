@@ -45,6 +45,7 @@ export default function simpleRuleOfThreePage () {
                             direction='reverse'
                         />
                     </SROT.Row>
+
                     <SROT.Row>
                         <SROT.Input
                             name="valueC"
@@ -63,6 +64,13 @@ export default function simpleRuleOfThreePage () {
                             valueXOwner={ruleOfThree.valueXOwner}
                             setValueXOwner={ruleOfThree.setValueXOwner}
                             direction='reverse'
+                        />
+                    </SROT.Row>
+
+                    <SROT.Row>
+                        <SROT.Proportionality
+                            state={ruleOfThree.proportionality}
+                            setState={ruleOfThree.setProportionality}
                         />
                     </SROT.Row>
                 </SROT.Wrapper>

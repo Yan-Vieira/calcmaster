@@ -3,16 +3,20 @@ import { useEffect, useState } from 'react'
 import operate from './operate'
 
 /**
- * Returns false if one of the values is empty, otherwise returns true
+ * Returns true if one of the values is empty, otherwise returns false
 */
-const checkValues = (values:SROT.values) => {
-    let result = true
+const isValueEmpty = (values:SROT.values, valueXOwner:SROT.valueXOwner) => {
+    let result = false
 
     Object.keys(values).forEach(key => {
+        if (key === valueXOwner) return;
+
         if (values[key] === '') {
-            result = false
+            result = true
         }
     })
+
+    return result
 }
 
 export default function useRuleOfThree () {
@@ -27,10 +31,26 @@ export default function useRuleOfThree () {
 
     const [valueXOwner, setValueXOwner] = useState<SROT.valueXOwner>('valueD')
 
-    useEffect(() => {
+    const [proportionality, setProportionality] = useState<SROT.proportionality>('directly')
 
-        setValueX(operate(values, valueXOwner, 'directly'))
-    }, [values])
+    useEffect(() => {
+        if (isValueEmpty(values, valueXOwner) === true) {
+            setValueX('')
+
+            return;
+        }
+
+        setValueX(operate(values, valueXOwner, proportionality))
+    }, [values, proportionality])
+
+    useEffect(() => {
+        setValues({
+            valueA: '',
+            valueB: '',
+            valueC: '',
+            valueD: ''
+        })
+    }, [valueXOwner])
 
     return {
         values: {
@@ -39,6 +59,8 @@ export default function useRuleOfThree () {
         },
         setValues,
         valueXOwner,
-        setValueXOwner
+        setValueXOwner,
+        proportionality,
+        setProportionality
     }
 }

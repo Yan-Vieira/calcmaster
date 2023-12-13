@@ -52,20 +52,39 @@ declare namespace SROT {
 declare namespace TimeDifference {
     
     type Values = {
-        startTime: string,
-        endTime: string,
-        startDate: string,
-        endDate: string
-    }
+        inputA: {
+            time: string,
+            date: string,
+        }
+        inputB: {
+            time: string,
+            date: string
+        }
+    } & {[key:string]: {time: string, date: string}}
 
-    type ValueNames = 'startTime' | 'endTime' | 'startDate' | 'endDate'
+    type InputName = 'inputA' | 'inputB'
 
     type InputType = 'time' | 'date'
 
+    type timeUnit = 'second' | 'minute' | 'hour' | 'full'
+
+    type dateUnit = 'day' | 'week' | 'month' | 'year' | 'full'
+
+    type Params = {
+        diffBetween: InputType
+        timeResultIn: timeUnit
+        dateResultIn: dateUnit
+    }
+
     interface InputProps {
-        type: TimeDifference.InputType
-        name: TimeDifference.ValueNames
-        state: string
-        setState: React.Dispatch<React.SetStateAction<TimeDifference.Values>>
+        type: InputType
+        name: InputName
+        state: Values
+        setState: React.Dispatch<React.SetStateAction<Values>>
+    }
+
+    interface InputResultProps {
+        placeholder: string,
+        params: Params
     }
 }

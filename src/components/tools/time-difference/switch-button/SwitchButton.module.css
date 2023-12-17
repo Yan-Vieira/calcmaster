@@ -1,0 +1,26 @@
+.button {
+    display: flex;
+    place-content: center;
+    resize: both;
+
+    width: clamp(0px, 100%, 30px);
+    height: clamp(0px, 100%, 30px);
+
+    margin-top: 20px;
+
+    background-color: transparent;
+
+    cursor: pointer;
+}
+.button svg {
+    width: 100%;
+    height: fit-content;
+
+    color: var(--col_4);
+}
+
+@media screen and (max-width: 800px) {
+    .button {
+        margin: 20px 0px;
+    }
+}

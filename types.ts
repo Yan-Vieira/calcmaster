@@ -67,11 +67,16 @@ declare namespace TimeDifference {
         dateDifference: string
     }
 
+    type Intermediary = {
+        time: string,
+        date: string
+    }
+
     type InputName = 'inputA' | 'inputB'
 
     type InputType = 'time' | 'date'
 
-    type timeUnit = 'second' | 'minute' | 'hour' | 'full'
+    type timeUnit = 'millisecond' | 'second' | 'minute' | 'hour' | 'full'
 
     type dateUnit = 'day' | 'week' | 'month' | 'year' | 'full'
 
@@ -93,5 +98,11 @@ declare namespace TimeDifference {
         params: Params,
         state: Results,
         setState: React.Dispatch<React.SetStateAction<Params>>
+    }
+
+    interface SwitchButtonProps {
+        values: Values
+        params: Params
+        setState: React.Dispatch<React.SetStateAction<Intermediary>>
     }
 }

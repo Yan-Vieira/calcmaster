@@ -33,6 +33,11 @@ export default function useTimeDifference () {
         dateDifference: ''
     })
 
+    const [intermediary, setIntermediary] = useState<TimeDifference.Intermediary>({
+            time: '',
+            date: ''
+    })
+
     const [params, setParams] = useState<TimeDifference.Params>({
         diffBetween: 'time',
         timeResultIn: 'full',
@@ -61,11 +66,29 @@ export default function useTimeDifference () {
 
     }, [values, params])
 
+    useEffect(() => {
+        if (isValueEmpty(values, params) === true) return;
+
+        setValues(state => ({
+            ...state,
+            inputB: {
+                ...state.inputB,
+                [params.diffBetween]: values.inputA[params.diffBetween]
+            },
+            inputA: {
+                ...state.inputA,
+                [params.diffBetween]: intermediary[params.diffBetween]
+            }
+        }))
+    }, [intermediary])
+
     return {
         values,
         setValues,
         results,
         setResults,
+        intermediary,
+        setIntermediary,
         params,
         setParams
     }

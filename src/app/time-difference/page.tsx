@@ -32,6 +32,12 @@ export default function TimeDifferencePage () {
                     setState={timeDifference.setValues}
                 />
 
+                <TimeDifference.SwitchButton
+                    values={timeDifference.values}
+                    params={timeDifference.params}
+                    setState={timeDifference.setIntermediary}
+                />
+
                 <TimeDifference.Input
                     name='inputB'
                     type={timeDifference.params.diffBetween}
@@ -48,6 +54,29 @@ export default function TimeDifferencePage () {
                     setState={timeDifference.setParams}
                 />
             </Page.Row>
+
+            {timeDifference.params.diffBetween === 'date' && (
+                <Page.Row
+                    customStyle={{
+                        height: '30px',
+                        paddingTop: '30px',
+                    }}
+                >
+                    <button
+                        style={{
+                            fontSize: '0.8em',
+                            color: 'red',
+                            backgroundColor: 'transparent',
+                            cursor: 'pointer',
+                        }}
+                        
+                        onMouseEnter={(e) => (e.target as HTMLButtonElement).style.textDecoration = 'underline'}
+                        onMouseLeave={(e) => (e.target as HTMLButtonElement).style.textDecoration = 'none'}
+                    >
+                        Atenção: a presente ferramenta não considera variações no calendário (anos bissextos, meses com 30 dias etc.)
+                    </button>
+                </Page.Row>
+            )}
         </Page.Wrapper>
     )
 }

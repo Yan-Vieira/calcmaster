@@ -7,7 +7,7 @@
     width: clamp(0px, 40%, 380px);
     height: fit-content;
 
-    margin-bottom: 30px;
+    margin: 20px 0px;
 }
 
 .wrapper label {

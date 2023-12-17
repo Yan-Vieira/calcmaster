@@ -25,10 +25,13 @@ export default function operate (values:TimeDifference.Values, params:TimeDiffer
     const cases = {
         'time': {
             'full': () => {
-                return time.convertToTime(results.time)
+                const result = time.convertToTime(results.time)
+
+                return /^([0-1][0-9]|2[0-3]):[0-5][0-9]$/.test(result) ? result : 'Valor inválido'
             },
             'hour': () => {
                 const result = (results.time / 60) / 60
+
                 return result > 0 ? `${result} hora${result > 1 ? 's':''}` : '0 horas'
             },
             'minute': () => {
@@ -37,7 +40,13 @@ export default function operate (values:TimeDifference.Values, params:TimeDiffer
             },
             'second': () => {
                 const result = results.time
+
                 return result > 0 ? `${result} segundo${result > 1 ? 's':''}` : '0 segundos'
+            },
+            'millisecond': () => {
+                const result = results.time * 1000
+                
+                return result > 0 ? `${result} milissegundo${result > 1 ? 's':''}` : '0 milissegundos'
             }
         },
         'date': {

@@ -10,7 +10,8 @@ const respectiveResultIn = {
         'full': 'horas e minutos',
         'hour': 'horas',
         'minute': 'minutos',
-        'second': 'segundos'
+        'second': 'segundos',
+        'millisecond': 'milissegundos'
     },
     date: {
         'full': 'dias, meses e anos',

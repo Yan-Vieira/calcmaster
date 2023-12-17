@@ -23,10 +23,12 @@ export default function Input ({ type, name, state, setState }:TimeDifference.In
                 type={type}
                 value={state[name][type]}
                 onChange={(e) => {
-                    console.log(e.target.value)
                     setState(state => ({
                         ...state,
-                        [name]: e.target.value
+                        [name]: {
+                            ...state[name],
+                            [type]: e.target.value                            
+                        }
                     }))
                 }}
             />

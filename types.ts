@@ -62,6 +62,11 @@ declare namespace TimeDifference {
         }
     } & {[key:string]: {time: string, date: string}}
 
+    type Results = {
+        timeDifference: string,
+        dateDifference: string
+    }
+
     type InputName = 'inputA' | 'inputB'
 
     type InputType = 'time' | 'date'
@@ -85,6 +90,8 @@ declare namespace TimeDifference {
 
     interface InputResultProps {
         placeholder: string,
-        params: Params
+        params: Params,
+        state: Results,
+        setState: React.Dispatch<React.SetStateAction<Params>>
     }
 }

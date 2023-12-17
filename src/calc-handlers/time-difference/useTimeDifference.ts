@@ -4,11 +4,11 @@ import operate from './operate'
 /**
  * Returns true if one of the values is empty, otherwise returns false
 */
-const isValueEmpty = (values:TimeDifference.Values) => {
+const isValueEmpty = (values:TimeDifference.Values, params:TimeDifference.Params) => {
     let result = false
 
     Object.keys(values).forEach(key => {
-        if (values[key].time === '' || values[key].date === '') {
+        if (values[key][params.diffBetween] === '') {
             result = true
         }
     })
@@ -28,7 +28,7 @@ export default function useTimeDifference () {
         }
     })
 
-    const [results, setResults] = useState({
+    const [results, setResults] = useState<TimeDifference.Results>({
         timeDifference: '',
         dateDifference: ''
     })
@@ -38,6 +38,28 @@ export default function useTimeDifference () {
         timeResultIn: 'full',
         dateResultIn: 'full'
     })
+
+    useEffect(() => {
+        if (isValueEmpty(values, params) === true) return;
+
+        const cases = {
+            'time': () => {
+                setResults(state => ({
+                    ...state,
+                    timeDifference: operate(values, params)
+                }))
+            },
+            'date': () => {
+                setResults(state => ({
+                    ...state,
+                    dateDifference: operate(values, params)
+                }))
+            }
+        }
+
+        cases[params.diffBetween]()
+
+    }, [values, params])
 
     return {
         values,

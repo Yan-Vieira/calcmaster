@@ -13,9 +13,7 @@
     border: 1px solid var(--col_4);
     border-radius: 10px;
 
-    width: 100%;
-    min-width: 150px;
-    max-width: 150px;
+    width: clamp(0px, 100%, 200px);
     height: 40px;
 
     font-size: 1em;

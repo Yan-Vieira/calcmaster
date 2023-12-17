@@ -44,6 +44,8 @@ export default function TimeDifferencePage () {
                 <TimeDifference.InputResult
                     placeholder="Resultado"
                     params={timeDifference.params}
+                    state={timeDifference.results}
+                    setState={timeDifference.setParams}
                 />
             </Page.Row>
         </Page.Wrapper>

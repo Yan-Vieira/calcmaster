@@ -1,5 +1,10 @@
 import styles from './InputResult.module.css'
 
+const respectiveDifferenceBetween = {
+    'time': 'horários',
+    'date': 'datas'
+}
+
 const respectiveResultIn = {
     time: {
         'full': 'horas e minutos',
@@ -22,28 +27,53 @@ const respectiveResultIn = {
     } & {[key:string]: string}
 }
 
-export default function InputResult ({ placeholder, params }:TimeDifference.InputResultProps) {
+export default function InputResult ({ placeholder, params, state, setState }:TimeDifference.InputResultProps) {
 
     return (
         <div className={styles.wrapper}>
             <input
                 type='text'
                 placeholder={placeholder}
+                value={params.diffBetween === 'time' ? state.timeDifference : state.dateDifference}
                 disabled
             />
 
+            <button
+                onClick={() => setState(state => ({
+                    ...state,
+                    diffBetween: params.diffBetween === 'time' ? 'date' : 'time'
+                }))}
+            >Diferença entre: {respectiveDifferenceBetween[params.diffBetween]}</button>
+
             <label>Resultado em:</label>
-            <select>
+            <select
+                onChange={(e) => setState(state => ({
+                    ...state,
+                    [`${params.diffBetween}ResultIn`]: e.target.value
+                }))}
+            >
             {params.diffBetween === 'time' && (
                     Object.keys(respectiveResultIn.time).map(key => (
                         <option
-                            key={`DiffTDToll${key}`}
-                            value={respectiveResultIn.time[key]}
+                            key={`DiffTDTool${key}`}
+                            value={key}
                         >
                             {respectiveResultIn.time[key]}
                         </option>
                     ))
-                )}
+                )
+            }
+
+            {params.diffBetween === 'date' && (
+                Object.keys(respectiveResultIn.date).map(key => (
+                    <option
+                        key={`DiffTDTool${key}`}
+                        value={key}
+                    >
+                        {respectiveResultIn.date[key]}
+                    </option>
+                ))
+            )}
             </select>
         </div>
     )

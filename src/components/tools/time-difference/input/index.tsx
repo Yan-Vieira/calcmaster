@@ -19,7 +19,6 @@ export default function Input ({ type, name, state, setState }:TimeDifference.In
                 {respectiveLabels[name][type]}
             </label>
             <input
-                className={styles.input}
                 type={type}
                 value={state[name][type]}
                 onChange={(e) => {

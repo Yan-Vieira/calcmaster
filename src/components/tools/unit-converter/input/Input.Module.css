@@ -1,0 +1,38 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: clamp(0px, 50%, 380px);
+    height: fit-content;
+
+    margin: 20px 0px;
+}
+
+.wrapper input {
+    padding: 5px;
+    border: 1px solid var(--col_4);
+    border-radius: 10px;
+
+    width: 150px;
+    height: 40px;
+
+    font-size: 1.2em;
+    text-align: center;
+
+    color: var(--col_4);
+}
+.wrapper input:disabled {
+    background-color: var(--col_1);
+}
+.wrapper input::placeholder {
+    font-weight: 500;
+    color: var(--col_3);
+}
+.wrapper input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.wrapper input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}

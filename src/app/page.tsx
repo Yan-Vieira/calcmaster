@@ -2,6 +2,7 @@ import Page from '@components/page'
 
 import SimpleRuleOfThreeIcon from '@assets/SimpleRuleOfThreeIcon'
 import TimeDifferenceIcon from '@assets/TimeDifferenceIcon'
+import UnitConverterIcon from '@assets/UnitConverterIcon'
 
 export default function Home() {
   return (
@@ -38,6 +39,12 @@ export default function Home() {
           href='/time-difference'
           image={<TimeDifferenceIcon />}
           text='Diferença de tempo'
+        />
+
+        <Page.TLink
+          href='/unit-converter'
+          image={<UnitConverterIcon />}
+          text='Conversor de unidades'
         />
       </Page.Row>
     </Page.Wrapper>

@@ -106,3 +106,68 @@ declare namespace TimeDifference {
         setState: React.Dispatch<React.SetStateAction<Intermediary>>
     }
 }
+
+declare namespace UnitConverter {
+
+    type inputName = 'valueA' | 'valueB'
+    
+    type measure = 'angle'
+
+    type Units = {
+        angle: 'arcsec' | 'rad' | 'arcmin' | '°' | 'gon';
+    }
+
+    type unit<T extends measure> = Units[T]
+
+    type UnitObject = {
+        symbol: string
+        en: string
+        ptBr: string
+    }
+
+    type Values = {
+        valueA: string
+        valueB: string
+    }
+
+    type Intermediary = {
+        valueB: string
+        valueBUnit: unit<measure> | ''
+    } & {[key:string]: string}
+
+    type Params<T extends measure> = {
+        valueAUnit: Units[T]
+        valueBUnit: Units[T]
+        unitType: T
+    } & {[key:string]: any}
+
+    interface InputProps {
+        name: inputName
+        state: Values
+        setState: React.Dispatch<React.SetStateAction<Values>>
+        params: Params<measure>
+        setParams: React.Dispatch<React.SetStateAction<Params<measure>>>
+        currentUnits: UnitObject[] 
+        direction?: 'normal' | 'reverse'
+        disabled?: boolean
+    }
+
+    interface UnitSelectionProps {
+        inputName: inputName
+        params: Params<measure>
+        setParams: React.Dispatch<React.SetStateAction<Params<measure>>>
+        currentUnits: UnitObject[]
+    }
+
+    interface UnitTypeMenuProps {
+        state: Params<measure>
+        setState: React.Dispatch<React.SetStateAction<Params<measure>>>
+        measures: measure[]
+    }
+
+    interface SwitchButtonProps {
+        values: Values
+        params: Params<measure>
+        setState: React.Dispatch<React.SetStateAction<Intermediary>>
+    }
+}

@@ -1,0 +1,10 @@
+.selection {
+    margin: 0px 20px;
+
+    font-size: 0.8em;
+    text-align: center;
+
+    color: var(--col_4);
+
+    cursor: pointer;
+}

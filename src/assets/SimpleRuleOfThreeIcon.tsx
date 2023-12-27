@@ -5,6 +5,7 @@ export default function SimpleRuleOfThreeIcon({ maxWidth, maxHeight }:SvgProps) 
         version="1.1"
         viewBox="0 0 26.458 26.458"
         fill="#696969"
+        style={{width: '100%', height: '100%', maxWidth, maxHeight}}
       >
         <g transform="translate(-111.311 -140.877)">
           <g
@@ -13,7 +14,6 @@ export default function SimpleRuleOfThreeIcon({ maxWidth, maxHeight }:SvgProps) 
             strokeMiterlimit="4.5"
             strokeWidth="1"
             transform="matrix(.63888 0 0 .63842 40.298 59.6)"
-            style={{width: '100%', height: '100%', maxWidth, maxHeight}}
           >
             <path
               fillOpacity="1"

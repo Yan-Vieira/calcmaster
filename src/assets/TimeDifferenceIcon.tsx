@@ -7,83 +7,96 @@ export default function TimeDifferenceIcon ({ maxWidth, maxHeight }:SvgProps) {
         style={{width: '100%', height: '100%', maxWidth, maxHeight}}
       >
         <g
-        fill='#696969'
-        fillOpacity='1'
-        stroke='none'
-        strokeLinecap='square'
-        strokeOpacity='1'
-        fontFamily='Arial'
-        fontSize='4.233'
-        fontStretch='normal'
-        fontStyle='normal'
-        fontVariant='normal'
-        fontWeight='normal'
-        paintOrder='markers fill stroke'
-        textAnchor='middle'
-      >
-        <text
-          xmlSpace='preserve'
-          style={{
-            fontFamily: "Arial",
-            textAlign: "center",
-          }}
-          x='13.278'
-          y='11.509'
-          strokeWidth='0'
+          fill='#696969'
+          fillOpacity='1'
+          stroke='#696969'
+          strokeDasharray='none'
+          strokeLinecap='square'
+          strokeOpacity='1'
+          strokeWidth='0.265'
+          fontFamily='Arial'
+          fontSize='4.507'
+          fontStretch='normal'
+          fontStyle='normal'
+          fontVariant='normal'
+          fontWeight='normal'
+          paintOrder='markers fill stroke'
+          textAnchor='middle'
+          transform='scale(.99982 1.00018)'
         >
-          <tspan
+          <text
+            xmlSpace='preserve'
             style={{
               fontFamily: "Arial",
               textAlign: "center",
             }}
-            x='13.278'
-            y='11.509'
-            fill='#696969'
-            fillOpacity='1'
-            stroke='none'
-            strokeOpacity='1'
-            strokeWidth='0'
-            fontFamily='Arial'
-            fontSize='4.233'
-            fontStretch='normal'
-            fontStyle='normal'
-            fontVariant='normal'
-            fontWeight='normal'
-            textAnchor='middle'
+            x='13.283'
+            y='11.396'
           >
-            05:50 am
-          </tspan>
-        </text>
-            <text
-                xmlSpace='preserve'
-                style={{
-                    fontFamily: "Arial",
-                    textAlign: "center",
-                }}
-                x='13.228'
-                y='14.326'
-                strokeDasharray='none'
-                strokeWidth='0.794'
+            <tspan
+              style={{
+                fontFamily: "Arial",
+                textAlign: "center",
+              }}
+              x='13.283'
+              y='11.396'
+              fill='#696969'
+              fillOpacity='1'
+              stroke='#696969'
+              strokeDasharray='none'
+              strokeOpacity='1'
+              strokeWidth='0.265'
+              fontFamily='Arial'
+              fontSize='4.507'
+              fontStretch='normal'
+              fontStyle='normal'
+              fontVariant='normal'
+              fontWeight='normal'
+              textAnchor='middle'
             >
-            <tspan x='13.228' y='14.326' strokeWidth='0.794'>
-                -
+              05:50 am
             </tspan>
-            </text>
-            <text
-                xmlSpace='preserve'
-                style={{
-                    fontFamily: "Arial",
-                    textAlign: "center",
-                }}
-                x='13.277'
-                y='17.94'
-                strokeDasharray='none'
-                strokeWidth='0.794'
+          </text>
+          <text
+            xmlSpace='preserve'
+            style={{
+              fontFamily: "Arial",
+              textAlign: "center",
+            }}
+            x='13.23'
+            y='14.394'
+          >
+            <tspan
+              x='13.23'
+              y='14.394'
+              stroke='#696969'
+              strokeDasharray='none'
+              strokeOpacity='1'
+              strokeWidth='0.265'
             >
-                <tspan x='13.277' y='17.94' strokeWidth='0.794'>
-                    2/2/2022
-                </tspan>
-            </text>
+              -
+            </tspan>
+          </text>
+          <text
+            xmlSpace='preserve'
+            style={{
+              fontFamily: "Arial",
+              textAlign: "center",
+            }}
+            x='13.282'
+            y='18.242'
+          >
+            <tspan
+              x='13.282'
+              y='18.242'
+              stroke='#696969'
+              strokeDasharray='none'
+              strokeOpacity='1'
+              strokeWidth='0.265'
+            >
+              2/2/2022
+            </tspan>
+          </text>
         </g>
       </svg>
     )

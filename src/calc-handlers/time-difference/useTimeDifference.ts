@@ -67,7 +67,6 @@ export default function useTimeDifference () {
     }, [values, params])
 
     useEffect(() => {
-        if (isValueEmpty(values, params) === true) return;
 
         setValues(state => ({
             ...state,

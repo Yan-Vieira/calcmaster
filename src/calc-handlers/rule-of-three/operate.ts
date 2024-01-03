@@ -1,3 +1,34 @@
+const formatNumber = (values:SROT.values, result:string) => {
+    const everyValueIsInteger = Object.keys(values).every(key => {
+        return Number.isInteger(Number(values[key]))
+    })
+
+    if (everyValueIsInteger) {
+        return result
+    }
+
+    const biggerValue = Object.keys(values).reduce((biggerProp, prop) => {
+        console.log(biggerProp, prop)
+
+        const biggerStringDecimals = values[biggerProp].slice(values[biggerProp].indexOf('.') || 0, values[biggerProp].length - 1)
+
+        const stringDecimals = values[prop].slice(values[prop].indexOf('.'), values[prop].length - 1)
+
+        if (stringDecimals.length > biggerStringDecimals.length) {
+          return prop;
+        } else {
+          return biggerProp;
+        }
+        
+    }, Object.keys(values)[0])
+
+    const decimals = values[biggerValue].slice(values[biggerValue].indexOf('.'), values[biggerValue].length - 1)
+
+    console.log(decimals)
+
+    return `${Number(result).toFixed(decimals.length)}`
+}
+
 const DProportionalCases = {
     'valueA': (values:SROT.values) => {
         return `${(Number(values.valueB) * Number(values.valueC)) / Number(values.valueD)}`
@@ -41,6 +72,8 @@ export default function operate (values:SROT.values, valueXOwner:SROT.valueXOwne
     : proportionality === 'inversely' ?
         result = INVProportionalCases[valueXOwner](values)
     : console.warn(`The proportionality type ${proportionality} is not valid`)
+
+    result = formatNumber(values, result)
 
     return result
 }

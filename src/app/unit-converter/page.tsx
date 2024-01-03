@@ -27,7 +27,7 @@ export default function UnitConverterPage () {
                             state={unitConverter.values}
                             setState={unitConverter.setValues}
                             params={unitConverter.params}
-                            currentUnits={unitConverter.unitsList.getUnitsFromMeasure(unitConverter.params.unitType)}
+                            currentUnits={unitConverter.unitsList.getUnitsFromMeasure(unitConverter.params.measure)}
                             setParams={unitConverter.setParams}
                         />
 
@@ -43,7 +43,7 @@ export default function UnitConverterPage () {
                             setState={unitConverter.setValues}
                             params={unitConverter.params}
                             setParams={unitConverter.setParams}
-                            currentUnits={unitConverter.unitsList.getUnitsFromMeasure(unitConverter.params.unitType)}
+                            currentUnits={unitConverter.unitsList.getUnitsFromMeasure(unitConverter.params.measure)}
                             direction='reverse'
                             disabled={true}
                         />
@@ -51,10 +51,10 @@ export default function UnitConverterPage () {
                     </UnitConverter.Row>
 
                     <UnitConverter.Row>
-                        <UnitConverter.UnitTypeMenu
+                        <UnitConverter.MeasureMenu
                             state={unitConverter.params}
                             setState={unitConverter.setParams}
-                            measures={unitConverter.unitsList.getTranslatedMeasures()}
+                            measures={unitConverter.unitsList.getMeasures()}
                         />
                     </UnitConverter.Row>
                 </UnitConverter.Wrapper>

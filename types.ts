@@ -111,16 +111,40 @@ declare namespace UnitConverter {
 
     type inputName = 'valueA' | 'valueB'
     
-    type measure = 'angle'
+    type measure = 'angle' | 'area' | 'data storage' | 'data transmission' | 'energy' | 'frequency' | 'length' | 'mass' | 'pressure' | 'speed' | 'temperature' | 'time' | 'volume'
 
     type Units = {
-        angle: 'arcsec' | 'rad' | 'arcmin' | '°' | 'gon';
+        'angle': 'arcsec' | 'rad' | 'arcmin' | '°' | 'gon';
+
+        'area': 'acre' | 'ha' | 'in²' | 'ft²' | 'yd²' | 'mi²' | 'cm²' | 'm²' | 'km²';
+
+        'data storage': 'b' | 'B' | 'kb' | 'KB' | 'mb' | 'MB' | 'gb' | 'GB' | 'tb' | 'TB' | 'PB' | 'EB' | 'ZB' | 'YB';
+
+        'data transmission': 'b/s' | 'B/s' | 'kb/s' | 'KB/s' | 'mb/s' | 'MB/s' | 'gb/s' | 'GB/s' | 'tb/s' | 'TB/s';
+
+        'energy': 'cal' | 'kcal' | 'J' | 'kJ' | 'Wh' | 'kWh';
+
+        'frequency': 'Hz' | 'kHz' | 'MHz' | 'GHz';
+
+        'length': 'in' | 'ft' | 'yd' | 'mi' | 'NM' | 'nm' | 'μm' | 'mm' | 'cm' | 'm' | 'km';
+
+        'mass': 'oz' | 'lb' | 'μg' | 'mg' | 'g' | 'kg' | 't';
+
+        'pressure': 'torr' | 'psi' | 'Pa' | 'bar' | 'atm';
+
+        'speed': 'kn' | 'km/h' | 'm/s' | 'ft/s' | 'mi/h';
+
+        'temperature': '°C' | '°F' | 'K';
+
+        'time': 'ms' | 's' | 'min' | 'h' | 'd' | 'week' | 'month' | 'y' | 'decade' | 'century';
+
+        'volume': 'in³' | 'ft³' | 'imp fl oz' | 'us fl oz' | 'imp gal' | 'us gal' | 'ml' | 'l' | 'm³';
     }
 
     type unit<T extends measure> = Units[T]
 
     type UnitObject = {
-        symbol: string
+        symbol: unit<measure>
         en: string
         ptBr: string
     }
@@ -138,7 +162,7 @@ declare namespace UnitConverter {
     type Params<T extends measure> = {
         valueAUnit: Units[T]
         valueBUnit: Units[T]
-        unitType: T
+        measure: T
     } & {[key:string]: any}
 
     interface InputProps {
@@ -159,10 +183,13 @@ declare namespace UnitConverter {
         currentUnits: UnitObject[]
     }
 
-    interface UnitTypeMenuProps {
+    interface MeasureMenuProps {
         state: Params<measure>
         setState: React.Dispatch<React.SetStateAction<Params<measure>>>
-        measures: measure[]
+        measures: {
+            ptBr: string,
+            en: string
+        }[]
     }
 
     interface SwitchButtonProps {

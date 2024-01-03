@@ -15,7 +15,7 @@ export default function UnitSelection ({ inputName, params, setParams, currentUn
                     key={`UnitCTool${unit.en}`}
                     value={unit.symbol}
                 >
-                    {unit.ptBr} ({unit.symbol})
+                    {unit.ptBr} {unit.symbol !== '' ? `(${unit.symbol})` : ''}
                 </option>
             ))}
         </select>

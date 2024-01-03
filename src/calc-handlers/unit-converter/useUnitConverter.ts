@@ -22,9 +22,9 @@ export default function useUnitConverter () {
     })
 
     const [params, setParams] = useState<UnitConverter.Params<UnitConverter.measure>>({
-        valueAUnit: 'arcsec',
-        valueBUnit: '°',
-        unitType: 'angle'
+        valueAUnit: '°',
+        valueBUnit: 'rad',
+        measure: 'angle'
     })
 
     const [intermediary, setIntermediary] = useState<UnitConverter.Intermediary>({
@@ -33,13 +33,16 @@ export default function useUnitConverter () {
     })
 
     useEffect(() => {
+        
+    }, [params.measure])
 
+    useEffect(() => {
         setValues(state => ({
             ...state,
             valueB: state.valueA === '' ? '' : operate(state, params)
         }))
 
-    }, [values.valueA])
+    }, [values.valueA, params])
 
     useEffect(() => {
         if (isIntermediaryEmpty(intermediary) === true) return;

@@ -1,12 +1,12 @@
 import { Wrapper, Row } from './styledComponents'
 import Input from './input'
-import UnitTypeMenu from './unit-type-menu'
+import MeasureMenu from './measure-menu'
 import SwitchButton from './switch-button'
 
 export default {
     Wrapper,
     Row,
     Input,
-    UnitTypeMenu,
+    MeasureMenu,
     SwitchButton
 }

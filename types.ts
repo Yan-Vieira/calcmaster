@@ -20,6 +20,9 @@ declare namespace Page {
     }
 }
 
+/**
+ * SROT = Simple Rule of Three
+*/
 declare namespace SROT {
     type values = {
         valueA: string,

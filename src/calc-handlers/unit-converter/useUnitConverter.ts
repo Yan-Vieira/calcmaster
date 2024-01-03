@@ -21,7 +21,7 @@ export default function useUnitConverter () {
         valueB: ''
     })
 
-    const [params, setParams] = useState<UnitConverter.Params<UnitConverter.measure>>({
+    const [params, setParams] = useState<UnitConverter.Params>({
         valueAUnit: '°',
         valueBUnit: 'rad',
         measure: 'angle'
@@ -54,7 +54,7 @@ export default function useUnitConverter () {
 
         setParams(state => ({
             ...state,
-            valueAUnit: intermediary.valueBUnit as UnitConverter.unit<UnitConverter.measure>,
+            valueAUnit: intermediary.valueBUnit as UnitConverter.unit,
             valueBUnit: state.valueAUnit
         }))
 

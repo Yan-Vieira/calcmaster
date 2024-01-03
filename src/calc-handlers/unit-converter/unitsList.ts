@@ -609,7 +609,7 @@ function getUnitsFromMeasure (measure: UnitConverter.measure) {
 }
 
 function getBaseUnit (measure: UnitConverter.measure) {
-    return unitsList[measure].baseUnit as UnitConverter.unit<UnitConverter.measure>
+    return unitsList[measure].baseUnit as UnitConverter.unit
 }
 
 export default {

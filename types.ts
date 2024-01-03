@@ -141,10 +141,10 @@ declare namespace UnitConverter {
         'volume': 'in³' | 'ft³' | 'imp fl oz' | 'us fl oz' | 'imp gal' | 'us gal' | 'ml' | 'l' | 'm³';
     }
 
-    type unit<T extends measure> = Units[T]
+    type unit = Units[measure]
 
     type UnitObject = {
-        symbol: unit<measure>
+        symbol: unit
         en: string
         ptBr: string
     }
@@ -156,21 +156,21 @@ declare namespace UnitConverter {
 
     type Intermediary = {
         valueB: string
-        valueBUnit: unit<measure> | ''
+        valueBUnit: unit | ''
     } & {[key:string]: string}
 
-    type Params<T extends measure> = {
-        valueAUnit: Units[T]
-        valueBUnit: Units[T]
-        measure: T
+    type Params = {
+        valueAUnit: Units[measure]
+        valueBUnit: Units[measure]
+        measure: measure
     } & {[key:string]: any}
 
     interface InputProps {
         name: inputName
         state: Values
         setState: React.Dispatch<React.SetStateAction<Values>>
-        params: Params<measure>
-        setParams: React.Dispatch<React.SetStateAction<Params<measure>>>
+        params: Params
+        setParams: React.Dispatch<React.SetStateAction<Params>>
         currentUnits: UnitObject[] 
         direction?: 'normal' | 'reverse'
         disabled?: boolean
@@ -178,14 +178,14 @@ declare namespace UnitConverter {
 
     interface UnitSelectionProps {
         inputName: inputName
-        params: Params<measure>
-        setParams: React.Dispatch<React.SetStateAction<Params<measure>>>
+        params: Params
+        setParams: React.Dispatch<React.SetStateAction<Params>>
         currentUnits: UnitObject[]
     }
 
     interface MeasureMenuProps {
-        state: Params<measure>
-        setState: React.Dispatch<React.SetStateAction<Params<measure>>>
+        state: Params
+        setState: React.Dispatch<React.SetStateAction<Params>>
         measures: {
             ptBr: string,
             en: string
@@ -194,7 +194,7 @@ declare namespace UnitConverter {
 
     interface SwitchButtonProps {
         values: Values
-        params: Params<measure>
+        params: Params
         setState: React.Dispatch<React.SetStateAction<Intermediary>>
     }
 }

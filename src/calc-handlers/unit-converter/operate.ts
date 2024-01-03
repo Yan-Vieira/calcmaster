@@ -2,7 +2,7 @@ import unitsList from "./unitsList"
 
 const operation = (
     values:UnitConverter.Values,
-    params:UnitConverter.Params<UnitConverter.measure>
+    params:UnitConverter.Params
 ):number => {
 
     if (params.valueAUnit === params.valueBUnit) return Number(values.valueA)
@@ -486,7 +486,7 @@ const convertionFormulas = {
 
 export default function operate (
     values:UnitConverter.Values,
-    params:UnitConverter.Params<UnitConverter.measure>
+    params:UnitConverter.Params
 ) {
     if (!convertionFormulas[params.measure][params.valueAUnit] || !convertionFormulas[params.measure][params.valueBUnit]) {
         throw new Error(`One or more passed parameters does not exist in the conversion table: {

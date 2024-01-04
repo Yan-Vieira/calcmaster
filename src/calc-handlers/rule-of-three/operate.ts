@@ -1,34 +1,53 @@
 const formatNumber = (values:SROT.values, result:string) => {
-    const everyValueIsInteger = Object.keys(values).every(key => {
-        return Number.isInteger(Number(values[key]))
-    })
+    /*console.log('formatNumberDebug', `result: ${result}`)*/
 
-    if (everyValueIsInteger) {
+    if (Number.isInteger(Number(result))) {
         return result
     }
 
-    const biggerValue = Object.keys(values).reduce((biggerProp, prop) => {
-        console.log(biggerProp, prop)
+    const biggerString = Object.values(values).reduce((biggerString, string) => {
 
-        const biggerStringDecimals = values[biggerProp].slice(values[biggerProp].indexOf('.') || 0, values[biggerProp].length - 1)
+        const biggerStringDecimals = string.slice(biggerString.indexOf('.')|| biggerString.length)
 
-        const stringDecimals = values[prop].slice(values[prop].indexOf('.'), values[prop].length - 1)
+        const stringDecimals = string.slice(string.indexOf('.'))
 
         if (stringDecimals.length > biggerStringDecimals.length) {
-          return prop;
+          return string
         } else {
-          return biggerProp;
+          return biggerString
         }
         
-    }, Object.keys(values)[0])
+    })
 
-    const decimals = values[biggerValue].slice(values[biggerValue].indexOf('.'), values[biggerValue].length - 1)
+    const biggerStringDecimalsLength = biggerString.slice(biggerString.indexOf('.') + 1, biggerString.length).length
 
-    console.log(decimals)
+    let newResult = Number(result).toFixed(biggerStringDecimalsLength)
 
-    return `${Number(result).toFixed(decimals.length)}`
+    if (Number(newResult) === 0 || !biggerString.includes('.')) {
+        const resultDecimals = result.slice(result.indexOf('.') + 1, result.length)
+
+        const newDecimalsLength = resultDecimals.search(/[1-9]/) + 2
+
+        newResult = Number(result).toFixed(newDecimalsLength)
+
+        /*console.log({
+            resultDecimals,
+            newDecimalsLength
+        })*/
+    }
+
+    /*console.log({
+        biggerString,
+        biggerStringDecimalsLength,
+        newResult
+    })*/
+
+    return `${newResult}`
 }
 
+/**
+ * DP = Directly Proportional
+*/
 const DProportionalCases = {
     'valueA': (values:SROT.values) => {
         return `${(Number(values.valueB) * Number(values.valueC)) / Number(values.valueD)}`
@@ -46,6 +65,9 @@ const DProportionalCases = {
     [key: string]: (values:SROT.values) => string
 }
 
+/**
+ * INVP = INVersely Proportional
+*/
 const INVProportionalCases = {
     'valueA': (values) => {
         return `${`${(Number(values.valueD) * Number(values.valueC)) / Number(values.valueB)}`}`

@@ -1,5 +1,5 @@
 const formatNumber = (values:SROT.values, result:string) => {
-    /*console.log('formatNumberDebug', `result: ${result}`)*/
+    /*console.log('rule of three >> formatNumber() debug', `result: ${result}`)*/
 
     if (Number.isInteger(Number(result))) {
         return result

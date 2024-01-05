@@ -1,5 +1,5 @@
 import time from "@lib/time"
-import {differenceInDays, differenceInMonths, differenceInYears} from 'date-fns'
+import {differenceInDays, differenceInMonths, differenceInYears, differenceInWeeks} from 'date-fns'
 
 /**
  * Returns the difference between two times in hh:mm format or the difference between two dates, regarding the params.diffBetween property
@@ -30,12 +30,12 @@ export default function operate (values:TimeDifference.Values, params:TimeDiffer
                 return /^([0-1][0-9]|2[0-3]):[0-5][0-9]$/.test(result) ? result : 'Valor inválido'
             },
             'hour': () => {
-                const result = (results.time / 60) / 60
+                const result = Math.floor((results.time / 60) / 60)
 
                 return result > 0 ? `${result} hora${result > 1 ? 's':''}` : '0 horas'
             },
             'minute': () => {
-                const result = results.time / 60
+                const result = Math.floor(results.time / 60)
                 return result > 0 ? `${result} minuto${result > 1 ? 's':''}` : '0 minutos'
             },
             'second': () => {
@@ -44,7 +44,7 @@ export default function operate (values:TimeDifference.Values, params:TimeDiffer
                 return result > 0 ? `${result} segundo${result > 1 ? 's':''}` : '0 segundos'
             },
             'millisecond': () => {
-                const result = results.time * 1000
+                const result = Math.floor(results.time * 1000)
                 
                 return result > 0 ? `${result} milissegundo${result > 1 ? 's':''}` : '0 milissegundos'
             }
@@ -60,8 +60,19 @@ export default function operate (values:TimeDifference.Values, params:TimeDiffer
 
                 return diff === 1 ? `${diff} mês` : diff <= 0 ? '' : `${diff} meses`
             },
+            'week': () => {
+                const diff = differenceInWeeks(valueB.date, valueA.date)
+
+                return diff > 0 ? `${diff} semana${diff > 1 ? 's' : ''}` : 'Valor inválido'
+            },
             'day': () => {
+                //console.log('date difference >> difference in days debug',`passed values: ${valueA.date} , ${valueB.date}`)
+
+                //console.log(`passed result.dateTime: ${results.dateTime}`)
+
                 const diff = differenceInDays(valueB.date, valueA.date)
+
+                //console.log(`diff: ${diff}`)
 
                 return diff > 0 ? `${diff} dia${diff > 1 ? 's' : ''}` : 'Valor inválido'
             },

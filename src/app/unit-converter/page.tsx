@@ -51,6 +51,13 @@ export default function UnitConverterPage () {
                     </UnitConverter.Row>
 
                     <UnitConverter.Row>
+                        <UnitConverter.RoundingInput
+                            params={unitConverter.params}
+                            setParams={unitConverter.setParams}
+                        />
+                    </UnitConverter.Row>
+
+                    <UnitConverter.Row>
                         <UnitConverter.MeasureMenu
                             state={unitConverter.params}
                             setState={unitConverter.setParams}

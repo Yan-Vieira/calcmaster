@@ -1,5 +1,35 @@
 import unitsList from "./unitsList"
 
+/**
+ * @param rounding A static number of decimal digits in the returned string. If it is 0, the function determines how many decimal digits are necessary.
+*/
+const formatNumber = (values:UnitConverter.Values, result:string, rounding:number) => {
+
+    if (rounding != 0) return Number(result).toFixed(rounding)
+    const extractDecimals = (value:string) => {
+        return value.slice(value.indexOf('.') + 1, value.length)
+    }
+
+    if (Number.isInteger(result)) return result
+
+    const valueADecimalsLength = extractDecimals(values.valueA).length
+
+    let newResult = Number(result).toFixed(valueADecimalsLength)
+
+    if (Number(newResult) === 0 || !values.valueA.includes('.')) {
+
+        const resultDecimals = extractDecimals(result)
+
+        const newDecimalsLength = resultDecimals.length > 9 ? 9 : resultDecimals.search(/[1-9]/) + 2
+
+        newResult = Number(result).toFixed(newDecimalsLength)
+    }
+
+    Number(extractDecimals(newResult)) === 0 ? newResult = Number.parseInt(result).toString(): null
+
+    return `${newResult}`
+}
+
 const operation = (
     values:UnitConverter.Values,
     params:UnitConverter.Params
@@ -51,12 +81,12 @@ const convertionFormulas = {
 
     'area': {
         'acre': {
-            toBaseUnit: (value) => {return value / 4047},
-            fromBaseUnit: (value) => {return value * 4047}
+            toBaseUnit: (value) => {return value * 4047},
+            fromBaseUnit: (value) => {return value / 4047}
         },
         'ha': {
-            toBaseUnit: (value) => {return value / 10000},
-            fromBaseUnit: (value) => {return value * 10000}
+            toBaseUnit: (value) => {return value * 10000},
+            fromBaseUnit: (value) => {return value / 10000}
         },
         'in²': {
             toBaseUnit: (value) => {return value / 1550},
@@ -71,8 +101,8 @@ const convertionFormulas = {
             fromBaseUnit: (value) => {return value * 1.196}
         },
         'mi²': {
-            toBaseUnit: (value) => {return value / (2.59 * 10**6)},
-            fromBaseUnit: (value) => {return value * (2.59 * 10**6)}
+            toBaseUnit: (value) => {return value * (2.59 * 10**6)},
+            fromBaseUnit: (value) => {return value / (2.59 * 10**6)}
         },
         'cm²': {
             toBaseUnit: (value) => {return value / 10000},
@@ -382,8 +412,8 @@ const convertionFormulas = {
             fromBaseUnit: (value) => {return value}
         },
         '°K': {
-            toBaseUnit: (value: number) => {return value + 273.15},
-            fromBaseUnit: (value: number) => {return value - 273.15}
+            toBaseUnit: (value: number) => {return value - 273.15},
+            fromBaseUnit: (value: number) => {return value + 273.15}
         },
         '°F': {
             toBaseUnit: (value) => {return (value - 32) / 1.8},
@@ -489,14 +519,16 @@ export default function operate (
     params:UnitConverter.Params
 ) {
     if (!convertionFormulas[params.measure][params.valueAUnit] || !convertionFormulas[params.measure][params.valueBUnit]) {
-        throw new Error(`One or more passed parameters does not exist in the conversion table: {
+        console.warn(`One or more passed parameters does not exist in the conversion table: {
             measure: ${params.measure},
             valueAUnit: ${params.valueAUnit},
             valueBUnit: ${params.valueBUnit}
         }`)
+
+        return ''
     }
 
-    console.log(values, params)
+    //console.log('unit converter >> operate() debug:', values, params)
 
-    return `${operation(values, params)}`
+    return `${formatNumber(values,`${operation(values, params)}`, params.rounding)}`
 }

@@ -24,17 +24,14 @@ export default function useUnitConverter () {
     const [params, setParams] = useState<UnitConverter.Params>({
         valueAUnit: '°',
         valueBUnit: 'rad',
-        measure: 'angle'
+        measure: 'angle',
+        rounding: 0
     })
 
     const [intermediary, setIntermediary] = useState<UnitConverter.Intermediary>({
         valueB: '',
         valueBUnit: ''
     })
-
-    useEffect(() => {
-        
-    }, [params.measure])
 
     useEffect(() => {
         setValues(state => ({

@@ -165,7 +165,8 @@ declare namespace UnitConverter {
     type Params = {
         valueAUnit: Units[measure]
         valueBUnit: Units[measure]
-        measure: measure
+        measure: measure,
+        rounding: number
     } & {[key:string]: any}
 
     interface InputProps {
@@ -199,5 +200,10 @@ declare namespace UnitConverter {
         values: Values
         params: Params
         setState: React.Dispatch<React.SetStateAction<Intermediary>>
+    }
+
+    interface RoundingInputProps {
+        params: Params
+        setParams: React.Dispatch<React.SetStateAction<Params>>
     }
 }

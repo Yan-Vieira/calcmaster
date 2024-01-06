@@ -89,6 +89,11 @@ const unitsList = {
         units: [
             {
                 symbol: 'b',
+                en: 'bit',
+                ptBr: 'bit'
+            },
+            {
+                symbol: 'B',
                 en: 'byte',
                 ptBr: 'byte'
             },
@@ -454,7 +459,7 @@ const unitsList = {
                 ptBr: 'graus Fahrenheit'
             },
             {
-                symbol: 'K',
+                symbol: '°K',
                 en: 'Kelvin',
                 ptBr: 'graus Kelvin'
             }
@@ -594,7 +599,7 @@ function getMeasures () {
             ptBr: unitsList[key].ptBr,
             en: key
         }
-    }).sort() as {
+    }) as {
         ptBr: string,
         en: string
     }[]
@@ -605,7 +610,7 @@ function getMeasures () {
  * @returns An array containing the correspondent units and its properties from the desired measure
 */
 function getUnitsFromMeasure (measure: UnitConverter.measure) {
-    return unitsList[measure].units.sort()
+    return unitsList[measure].units
 }
 
 function getBaseUnit (measure: UnitConverter.measure) {

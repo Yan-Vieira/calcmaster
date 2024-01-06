@@ -11,13 +11,15 @@ export default function MeasureMenu ({ state, setState, measures }:UnitConverter
             onChange={(e) => {
                 const newValue = e.target.value as UnitConverter.measure
 
-                setState({
+                setState(state => ({
+                    ...state,
+
                     valueAUnit: unitsList.getBaseUnit(newValue),
 
-                    valueBUnit: unitsList.getUnitsFromMeasure(newValue)[1].symbol as UnitConverter.unit<UnitConverter.measure>,
+                    valueBUnit: unitsList.getUnitsFromMeasure(newValue)[1].symbol as UnitConverter.unit,
 
                     measure: e.target.value as UnitConverter.measure
-                })
+                }))
             }}
         >
             {measures.map(measure => (

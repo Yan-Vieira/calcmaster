@@ -1,4 +1,6 @@
 .selection {
+    width: clamp(0px, 100%, 221px);
+
     margin: 0px 20px;
 
     font-size: 0.8em;

@@ -5,12 +5,14 @@ import unitsList from "./unitsList"
 */
 const formatNumber = (values:UnitConverter.Values, result:string, rounding:number) => {
 
-    if (rounding != 0) return Number(result).toFixed(rounding)
+    if (rounding != 0 && Number.isInteger(Number(result)) === false) return Number(result).toFixed(rounding)
+
+    if (Number.isInteger(result)) return result
+
+
     const extractDecimals = (value:string) => {
         return value.slice(value.indexOf('.') + 1, value.length)
     }
-
-    if (Number.isInteger(result)) return result
 
     const valueADecimalsLength = extractDecimals(values.valueA).length
 

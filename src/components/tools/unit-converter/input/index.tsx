@@ -10,7 +10,7 @@ export default function Input ({ name, state, setState, params, setParams, curre
 
     return (
         <div className={styles.wrapper}>
-            {(direction === 'normal' || currentWindowWidth <= 700) && (
+            {(direction === 'normal' || currentWindowWidth <= 800) && (
                 <UnitSelection
                     inputName={name}
                     params={params}
@@ -30,7 +30,7 @@ export default function Input ({ name, state, setState, params, setParams, curre
                 disabled={disabled}
             />
 
-            {direction === 'reverse' && currentWindowWidth > 700 && (
+            {direction === 'reverse' && currentWindowWidth > 800 && (
                 <UnitSelection
                     inputName={name}
                     params={params}

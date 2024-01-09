@@ -36,3 +36,11 @@
 .wrapper input::-webkit-outer-spin-button {
     -webkit-appearance: none;
 }
+
+@media screen and (max-width: 800px) {
+    .wrapper {
+        flex-direction: column;
+
+        margin: 0;
+    }
+}

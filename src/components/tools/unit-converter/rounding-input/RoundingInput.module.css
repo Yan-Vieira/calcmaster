@@ -2,8 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    
-    width: clamp(0px, 50%, 380px);
+
     height: fit-content;
 
     margin: 20px 0px;

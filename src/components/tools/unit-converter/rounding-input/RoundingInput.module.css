@@ -29,9 +29,6 @@
 
     color: var(--col_4);
 }
-.wrapper input:disabled {
-    background-color: var(--col_1);
-}
 .wrapper input::placeholder {
     font-weight: 500;
     color: var(--col_3);

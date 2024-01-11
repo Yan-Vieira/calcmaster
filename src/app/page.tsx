@@ -4,6 +4,7 @@ import SimpleRuleOfThreeIcon from '@assets/SimpleRuleOfThreeIcon'
 import TimeDifferenceIcon from '@assets/TimeDifferenceIcon'
 import UnitConverterIcon from '@assets/UnitConverterIcon'
 import PxToEmIcon from '@assets/pxToEmIcon'
+import CurrencyConverterIcon from '@assets/CurrencyConverterIcon'
 
 export default function Home() {
   return (
@@ -52,6 +53,12 @@ export default function Home() {
           href='/px-to-em'
           image={<PxToEmIcon />}
           text='Conversor de px para em'
+        />
+
+        <Page.TLink
+          href='/currency-converter'
+          image={<CurrencyConverterIcon />}
+          text='Conversor de moeda'
         />
       </Page.Row>
     </Page.Wrapper>

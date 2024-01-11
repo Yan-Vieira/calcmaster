@@ -1,0 +1,18 @@
+.selection {
+    width: fit-content;
+
+    margin: 0px 20px;
+
+    font-size: 0.8em;
+    text-align: center;
+
+    color: var(--col_4);
+
+    cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+    .selection {
+        margin-bottom: 3px;
+    }
+}

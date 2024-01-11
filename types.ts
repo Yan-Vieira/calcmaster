@@ -230,3 +230,44 @@ declare namespace PxToEmConverter {
         setState: React.Dispatch<React.SetStateAction<defaultSize>>
     }
 }
+
+declare namespace CurrencyConverter {
+
+    type inputName = 'valueA' | 'valueB'
+
+    type currency = 'BRL'| 'USD' | 'EUR'
+
+    type currencyObject = {
+        symbol: currency,
+        en: string,
+        ptBr: string
+    }
+
+    type Values = {
+        valueA: string,
+        valueB: string
+    }
+
+    type Params = {
+        valueACurrency: currency,
+        valueBCurrency: currency
+    }
+
+    interface InputProps {
+        name: inputName,
+        disabled?: boolean
+        state: Values
+        setState: React.Dispatch<React.SetStateAction<Values>>
+        params: Params,
+        setParams: React.Dispatch<React.SetStateAction<Params>>,
+        currentCurrencies: currencyObject[]
+        direction?: 'normal' | 'reverse'
+    }
+
+    interface CurrencySelectionProps {
+        inputName: inputName,
+        params: Params,
+        setParams: React.Dispatch<React.SetStateAction<Params>>,
+        currentCurrencies: currencyObject[]
+    }
+}

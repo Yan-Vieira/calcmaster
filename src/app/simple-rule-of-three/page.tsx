@@ -5,7 +5,7 @@ import SROT from '@/components/tools/simple-rule-of-three'
 
 import useRuleOfThree from '@/calc-handlers/rule-of-three/useRuleOfThree'
 
-export default function simpleRuleOfThreePage () {
+export default function SimpleRuleOfThreePage () {
 
     const ruleOfThree = useRuleOfThree()
 

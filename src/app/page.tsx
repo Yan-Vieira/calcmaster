@@ -54,6 +54,21 @@ export default function Home() {
           text='Conversor de px para em'
         />
       </Page.Row>
+
+      <Page.Row
+        customStyle={{
+          marginTop: '70px'
+        }}
+      >
+        <p
+          style={{
+            fontWeight: '600',
+            textAlign: 'center',
+            color: 'var(--col_4)',
+            opacity: '0.5'
+          }}
+        >Este projeto está em desenvolvimento, novas ferramentas estarão disponíveis em breve</p>
+      </Page.Row>
     </Page.Wrapper>
   )
 }

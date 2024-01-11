@@ -3,7 +3,7 @@ export default function UnitConverterIcon ({ maxWidth, maxHeight }:SvgProps) {
       <svg
         xmlns="http://www.w3.org/2000/svg"
         version="1.1"
-        viewBox="0 0 26.458 26.458"
+        viewBox="0 0 26.458 26.458339"
         fill="#696969"
         style={{width: '100%', height: '100%', maxWidth, maxHeight}}
       >

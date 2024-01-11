@@ -207,3 +207,26 @@ declare namespace UnitConverter {
         setParams: React.Dispatch<React.SetStateAction<Params>>
     }
 }
+
+declare namespace PxToEmConverter {
+    type inputName = 'pxInput' | 'emInput'
+
+    type defaultSize = string
+
+    type Values = {
+        reCalc: boolean,
+        px: string,
+        em: string
+    }
+
+    interface InputProps {
+        name: inputName,
+        state: Values
+        setState: React.Dispatch<React.SetStateAction<Values>>
+    }
+
+    interface DefaultSizeInputProps {
+        state: defaultSize,
+        setState: React.Dispatch<React.SetStateAction<defaultSize>>
+    }
+}

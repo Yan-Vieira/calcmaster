@@ -3,6 +3,7 @@ import Page from '@components/page'
 import SimpleRuleOfThreeIcon from '@assets/SimpleRuleOfThreeIcon'
 import TimeDifferenceIcon from '@assets/TimeDifferenceIcon'
 import UnitConverterIcon from '@assets/UnitConverterIcon'
+import PxToEmIcon from '@assets/pxToEmIcon'
 
 export default function Home() {
   return (
@@ -45,6 +46,12 @@ export default function Home() {
           href='/unit-converter'
           image={<UnitConverterIcon />}
           text='Conversor de unidades'
+        />
+
+        <Page.TLink
+          href='/px-to-em'
+          image={<PxToEmIcon />}
+          text='Conversor de px para em'
         />
       </Page.Row>
     </Page.Wrapper>

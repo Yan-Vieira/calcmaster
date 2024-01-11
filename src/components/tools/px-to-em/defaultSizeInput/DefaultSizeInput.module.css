@@ -1,0 +1,42 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: fit-content;
+
+    margin: 20px 0px;
+}
+
+.wrapper label {
+    width: fit-content;
+    height: 20px;
+
+    font-size: 1em;
+    text-align: center;
+
+    color: var(--col_4);
+}
+
+.wrapper input {
+    padding-top: 3px;
+
+    width: 41px;
+    height: fit-content;
+
+    font-size: 1em;
+    text-align: center;
+
+    color: var(--col_4);
+}
+.wrapper input::placeholder {
+    font-weight: 500;
+    color: var(--col_3);
+}
+.wrapper input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.wrapper input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}

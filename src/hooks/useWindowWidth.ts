@@ -12,7 +12,7 @@ export default function useWindowWidth () {
 
         setWidth(window === undefined ? 1001 : window.innerWidth)
         
-    }, [window])
+    }, [])
 
     return width
 }

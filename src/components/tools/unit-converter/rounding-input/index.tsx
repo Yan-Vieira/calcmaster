@@ -9,21 +9,23 @@ export default function RoundingInput ({ params, setParams }:UnitConverter.Round
             <input
                 id="rounding"
                 
-                type='text'
+                type="text"
 
                 defaultValue={params.rounding === 0 ? 'auto' : `${params.rounding}`}
 
                 onChange={(e) => {
                     let value = e.target.value === 'auto' ? 0 : Number.parseInt(e.target.value)
 
-                    value < 1 ? value = 0 : null
+                    value < 1 || Number.isNaN(value) ? value = 0 : null
                     value > 9 ? value = 9 : null
                     
                     setParams(state => ({
                         ...state,
                         rounding: value
-                    }
-                ))}}
+                    }))
+
+                    e.target.type = 'number'
+                }}
 
                 onFocus={(e) => {
                     e.target.type = 'number'

@@ -3,22 +3,20 @@
 import { useState, useEffect } from 'react'
 
 /**
- * Retorna a largura atual da janela do navegador.
+ * Returns the current browser's window width
 */
 export default function useWindowWidth () {
-    const [width, setWidth] = useState<number>(1000)
+    const [width, setWidth] = useState<number>(1001)
 
     useEffect(() => {
         if (window === undefined) {
-            setWidth(1000)
+            setWidth(1001)
             return;
         }
 
-        const handleResize = () => setWidth(window === undefined ? 1000 : window.innerWidth)
+        const handleResize = () => setWidth(window === undefined ? 1001 : window.innerWidth)
 
         window.addEventListener('resize', handleResize)
-
-        window.removeEventListener('resize', handleResize)
     }, [])
 
     return width

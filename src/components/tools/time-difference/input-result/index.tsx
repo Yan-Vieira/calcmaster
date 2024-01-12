@@ -46,8 +46,10 @@ export default function InputResult ({ placeholder, params, state, setState }:Ti
                 }))}
             >Diferença entre: {respectiveDifferenceBetween[params.diffBetween]}</button>
 
-            <label>Resultado em:</label>
+            <label htmlFor="resultIn">Resultado em:</label>
             <select
+                id="resultIn"
+
                 onChange={(e) => setState(state => ({
                     ...state,
                     [`${params.diffBetween}ResultIn`]: e.target.value

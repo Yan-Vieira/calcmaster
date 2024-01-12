@@ -1,4 +1,4 @@
-const unitsList = {
+const localUnitsList = {
     'angle': {
         baseUnit: '°',
         ptBr: 'ângulo',
@@ -587,16 +587,16 @@ const unitsList = {
  * @returns An object containing every measure and its correspondent properties and units
 */
 function getUnitsList () {
-    return unitsList
+    return localUnitsList
 }
 
 /**
  * @returns An array containing one measure object for each avaidable measure, with both pt-br and en translations
 */
 function getMeasures () {
-    return Object.keys(unitsList).map(key => {
+    return Object.keys(localUnitsList).map(key => {
         return {
-            ptBr: unitsList[key].ptBr,
+            ptBr: localUnitsList[key].ptBr,
             en: key
         }
     }) as {
@@ -610,16 +610,18 @@ function getMeasures () {
  * @returns An array containing the correspondent units and its properties from the desired measure
 */
 function getUnitsFromMeasure (measure: UnitConverter.measure) {
-    return unitsList[measure].units
+    return localUnitsList[measure].units
 }
 
 function getBaseUnit (measure: UnitConverter.measure) {
-    return unitsList[measure].baseUnit as UnitConverter.unit
+    return localUnitsList[measure].baseUnit as UnitConverter.unit
 }
 
-export default {
+const unitsList = {
     getUnitsList,
     getMeasures,
     getUnitsFromMeasure,
     getBaseUnit
 }
+
+export default unitsList

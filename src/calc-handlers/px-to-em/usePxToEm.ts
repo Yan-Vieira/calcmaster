@@ -28,7 +28,7 @@ export default function usePxToEm () {
             reCalc: false,
             em: Number(result) <= 0 ? '' : result
         }))
-
+//eslint-disable-next-line
     }, [values.px])
 
     useEffect(() => {
@@ -49,7 +49,7 @@ export default function usePxToEm () {
             reCalc: false,
             px: Number(result) <= 0 ? '' : result
         }))
-        
+//eslint-disable-next-line
     }, [values.em])
 
     useEffect(() => {
@@ -60,7 +60,7 @@ export default function usePxToEm () {
             ...state,
             em: Number(result) <= 0 ? '' : result
         }))
-
+//eslint-disable-next-line
     }, [defaultSize])
 
     return {

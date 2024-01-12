@@ -2,7 +2,7 @@ import {Wrapper, Row, Line} from './styledComponents'
 import Input from './input'
 import Proportionality from './proportionality'
 
-export default {
+const SROT = {
     /**
      * The body from simple rule of three tool.
     */
@@ -21,3 +21,5 @@ export default {
     */
     Proportionality
 }
+
+export default SROT

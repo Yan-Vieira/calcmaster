@@ -41,6 +41,7 @@ export default function useRuleOfThree () {
         }
 
         setValueX(operate(values, valueXOwner, proportionality))
+//eslint-disable-next-line
     }, [values, proportionality])
 
     useEffect(() => {

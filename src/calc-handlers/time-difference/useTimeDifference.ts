@@ -79,6 +79,7 @@ export default function useTimeDifference () {
                 [params.diffBetween]: intermediary[params.diffBetween]
             }
         }))
+//eslint-disable-next-line
     }, [intermediary])
 
     return {

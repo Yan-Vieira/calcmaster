@@ -3,9 +3,9 @@ import Row from './row/index'
 import TLink from './t-link'
 
 /**
- * Objeto que reúne os elementos necessários para criar uma página.
+ * Object that holds all page components.
 */
-export default {
+const Page = {
     /**
      * O corpo principal da página.
     */
@@ -19,3 +19,5 @@ export default {
     */
     TLink
 }
+
+export default Page

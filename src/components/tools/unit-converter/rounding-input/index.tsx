@@ -4,9 +4,11 @@ export default function RoundingInput ({ params, setParams }:UnitConverter.Round
 
     return (
         <div className={styles.wrapper}>
-            <label>Arredondamento:</label>
+            <label htmlFor="rounding">Arredondamento:</label>
             
             <input
+                id="rounding"
+                
                 type='text'
 
                 defaultValue={params.rounding === 0 ? 'auto' : `${params.rounding}`}

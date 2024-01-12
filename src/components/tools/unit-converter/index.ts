@@ -4,7 +4,7 @@ import MeasureMenu from './measure-menu'
 import SwitchButton from './switch-button'
 import RoundingInput from './rounding-input'
 
-export default {
+const UnitConverter = {
     Wrapper,
     Row,
     Input,
@@ -12,3 +12,5 @@ export default {
     SwitchButton,
     RoundingInput
 }
+
+export default UnitConverter

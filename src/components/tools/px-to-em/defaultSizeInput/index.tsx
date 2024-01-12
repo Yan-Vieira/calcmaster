@@ -4,11 +4,12 @@ export default function DefaultSizeInput ({ state, setState }:PxToEmConverter.De
 
     return (
         <div className={styles.wrapper}>
-            <label>
+            <label htmlFor="defaultSizeInput">
                 Tamanho padrão da fonte (em pixels):
             </label>
 
             <input
+                id="defaultSizeInput"
                 type="number"
                 value={state}
                 onChange={(e) => {

@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Calcmaster - ferramentas matemáticas',
-  description: 'Todas as ferramentas matemáticas que você precisa, em um só lugar',
+  description: 'Todas as ferramentas matemáticas que você precisa, em um só lugar'
 }
 
 export default function RootLayout({

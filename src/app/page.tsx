@@ -62,12 +62,15 @@ export default function Home() {
       >
         <p
           style={{
+            marginTop: '50px',
             fontWeight: '600',
             textAlign: 'center',
             color: 'var(--col_4)',
-            opacity: '0.5'
+            opacity: '0.4'
           }}
-        >Este projeto está em desenvolvimento, novas ferramentas estarão disponíveis em breve</p>
+        >
+          Novas ferramentas em breve
+        </p>
       </Page.Row>
     </Page.Wrapper>
   )

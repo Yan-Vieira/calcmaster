@@ -38,7 +38,7 @@ header {
 
 main {
   width: 100%;
-  height: clamp(700px, 90%, 2000px);
+  height: clamp(837px, 90%, 2000px);
 }
 
 h1 {
@@ -72,13 +72,13 @@ a {
   color: var(--col_4);
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
   h1 {
     font-size: 1.5em;
   }
 
   h2 {
-    font-size: 1em;
+    font-size: 1.3em;
   }
 
   h4 {

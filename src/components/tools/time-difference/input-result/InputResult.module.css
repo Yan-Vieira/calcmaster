@@ -13,7 +13,7 @@
     border: 1px solid var(--col_4);
     border-radius: 10px;
 
-    width: clamp(0px, 100%, 200px);
+    width: 150px;
     height: 40px;
 
     font-size: 1em;
@@ -34,7 +34,7 @@
 .wrapper button {
     font-size: 0.9em;
 
-    margin-top: 15px;
+    margin-top: 27px;
 
     color: var(--col_4);
     background-color: transparent;
@@ -46,7 +46,7 @@
 }
 
 .wrapper label {
-    margin-top: 15px;
+    margin-top: 27px;
 
     font-size: 0.9em;
 
@@ -58,6 +58,7 @@
     text-align: center;
 
     color: var(--col_4);
+    background-color: transparent;
 }
 .wrapper select:focus {
     outline: none;

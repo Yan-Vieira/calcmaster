@@ -1,8 +1,10 @@
 .wrapper {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
 
+    width: 100%;
     height: fit-content;
 
     margin: 20px 0px;
@@ -10,7 +12,6 @@
 
 .wrapper label {
     width: fit-content;
-    height: 20px;
 
     font-size: 1em;
     text-align: center;
@@ -28,6 +29,7 @@
     text-align: center;
 
     color: var(--col_4);
+    background-color: transparent;
 }
 .wrapper input::placeholder {
     font-weight: 500;

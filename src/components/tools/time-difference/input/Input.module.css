@@ -26,6 +26,7 @@
     text-align: center;
 
     color: var(--col_4);
+    background-color: var(--col_1);
 }
 .wrapper input::-webkit-inner-spin-button {
     -webkit-appearance: none;

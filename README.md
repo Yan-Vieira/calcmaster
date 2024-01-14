@@ -1,6 +1,6 @@
 <h1 align="center">Calcmaster</h1>
 
-![GitHub License](https://img.shields.io/github/license/Yan-Vieira/calcmaster)
+![Static Badge](https://img.shields.io/badge/License-MIT-green)
 ![Next dependency version](https://img.shields.io/badge/Next-14.0.3-black)
 ![Static Badge](https://img.shields.io/badge/Status-Em%20desenvolvimento-green)
 

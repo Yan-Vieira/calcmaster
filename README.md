@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">Calcmaster</h1>
 
-## Getting Started
+![GitHub License](https://img.shields.io/github/license/Yan-Vieira/calcmaster)
+![Next dependency version](https://img.shields.io/badge/Next-14.0.3-black)
+![Static Badge](https://img.shields.io/badge/Status-Em%20desenvolvimento-green)
 
-First, run the development server:
+<p align="center">
+  <img src="https://github.com/Yan-Vieira/calcmaster/blob/master/banner-calcmaster.png" alt="banner do repositório Calcmaster"/>
+</p>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+</br>
+</br>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<h4 align="center">:warning: Este projeto não receberá atualizações por um tempo, em favor de outro projeto em desenvolvimento :warning:</h4>
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+</br>
+</br>
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Descrição
 
-## Learn More
+Um site que reúne todas as ferramentas matemáticas que você **precisa** no seu cotidiano.
 
-To learn more about Next.js, take a look at the following resources:
+## Ferramentas
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- :heavy_check_mark: Calculadora de regra de três simples
+- :heavy_check_mark: Calculadora de diferença entre datas e entre horários
+- :heavy_check_mark: Conversor de unidades de medida
+- :heavy_check_mark: Conversor de PX para EM e vice-cersa
+- :hammer: Calculadora de juros simples e composto
+- :hammer: Calculadora de regra de três composta
+- :hammer: Conversor de moeda

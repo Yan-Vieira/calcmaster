@@ -7,10 +7,24 @@ export default function Footer () {
         <footer className={styles.footer}>
 
             <p>
-                Criado por <a href="https://github.com/Yan-Vieira" rel="noreferrer noopener" style={{color: 'var(--col_5)'}}>Yan Vieira</a>
+                Criado por
+                <a
+                    href="https://github.com/Yan-Vieira"
+                    target="_blank" rel="noreferrer noopener"
+                    style={{color: 'var(--col_5)'}}
+                >
+                    Yan Vieira
+                </a>
             </p>
 
-            <a className={styles.link} href='https://github.com/Yan-Vieira/calcmaster' target='_blank' rel='noreferrer noopener'><FaGithub /></a>
+            <a
+                className={styles.link}
+                href='https://github.com/Yan-Vieira/calcmaster'
+                target='_blank'
+                rel='noreferrer noopener'
+            >
+                <FaGithub />
+            </a>
         </footer>
     )
 }
